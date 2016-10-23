@@ -86,7 +86,9 @@ export const actions = {
 const ACTION_HANDLERS = {
   [NEXT_ITEM] : (state, action) => Object.assign({}, state, { focused: collectionNext(state, action.work) }),
   [PREVIOUS_ITEM] : (state, action) => Object.assign({}, state, { focused: collectionPrevious(state, action.work) }),
-  [FOCUS_PARENT] : (state, action) => Object.assign({}, state, { focused: collectionFirst(state, action.work), headerInteractedWith: true }),
+  [FOCUS_PARENT] : (state, action) => Object.assign({}, state, {
+    focused: collectionFirst(state, action.work), headerInteractedWith: true
+  }),
   [FOCUS_ITEM] : (state, action) => Object.assign({}, state, { focused: action.work }),
   [UNFOCUS] : (state, action) => Object.assign({}, state, { focused: {} })
 }
