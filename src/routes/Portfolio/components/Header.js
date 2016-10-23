@@ -1,0 +1,39 @@
+import _ from 'underscore'
+import React, { PropTypes } from 'react'
+import MediaQuery from 'react-responsive'
+import Contact from './Contact'
+import './Header.scss'
+
+class Header extends React.Component {
+
+  render () {
+    let className = this.props.focus.id > 0 ? 'header header--focused' : 'header'
+
+    if (this.props.interactedWith && _.isEmpty(this.props.focus)) {
+      className += ' header--interacted'
+    }
+
+    return (
+      <header className={className}>
+        <h1 className='header-name' onClick={() => this.props.onClick()}>
+          MAGDALENE CARSON
+          <i className='header-icon fa fa-envelope-o' aria-hidden='true' />
+        </h1>
+        <MediaQuery query='(min-device-width: 960px)'>
+          <div className='contact-top'>
+            <Contact />
+          </div>
+        </MediaQuery>
+        <Contact />
+      </header>
+    )
+  }
+}
+
+Header.propTypes = {
+  focus: PropTypes.object.isRequired,
+  interactedWith: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired
+}
+
+export default Header

@@ -1,0 +1,30 @@
+.pagination-item {
+  display: inline-block;
+  margin: 0 1.3rem 0 0;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 50%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+
+  width: 8px;
+  height: 8px;
+  z-index: 86;
+
+  -webkit-transition: background-color .2s ease-in-out;
+  -moz-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  -ms-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+
+  @media only screen and (min-device-width: 768px) {
+    margin: 0 1.6rem 0 0;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  &.pagination-item--active {
+    background-color: #000;
+  }
+}

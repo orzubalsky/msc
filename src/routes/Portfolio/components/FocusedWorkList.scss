@@ -1,0 +1,61 @@
+.focused-works-outer {
+  position: absolute;
+  top: 7vh;
+  left: 0;
+  z-index: 10;
+  height: 65vh;
+  width: 100vw;
+  transition: all 0.2s ease 0s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  opacity: 0;
+  overflow-x: scroll;
+  overflow-y: hidden
+
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media only screen and (min-device-width: 320px) and (orientation: landscape) {
+    height: 60vh;
+    top: 10vh;
+  }
+
+  @media only screen and (min-device-width: 768px) {
+    top: 6vh;
+    height: 73vh;
+  }
+
+  @media only screen and (min-device-width: 768px) and (orientation: landscape) {
+    height: 68vh;
+    top: 7vh;
+  }
+
+  @media only screen and (min-device-width: 960px) {
+    overflow-x: hidden;
+  }
+
+  &.focused-works-outer--active {
+    opacity: 1;
+  }
+}
+
+.focused-works-inner {
+  width: 10000vw;
+  height: 65vh;
+  position: absolute;
+  transition: all 0.2s ease 0s;
+
+  @media only screen and (min-device-width: 320px) and (orientation: landscape) {
+    height: 60vh;
+  }
+
+  @media only screen and (min-device-width: 768px) {
+    height: 73vh;
+  }
+
+  @media only screen and (min-device-width: 768px) and (orientation: landscape) {
+    height: 68vh;
+  }
+}

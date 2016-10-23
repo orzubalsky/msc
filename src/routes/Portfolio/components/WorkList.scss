@@ -1,0 +1,29 @@
+.works-outer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 23vh;
+  width: 100vw;
+  z-index: 1;
+
+  @media only screen and (min-device-width: 320px) and (orientation: landscape) {
+    height: 25vh;
+  }
+
+  @media only screen and (min-device-width: 768px) {
+    height: 15vh;
+  }
+
+  @media only screen and (min-device-width: 768px) and (orientation: landscape) {
+    height: 20vh;
+  }
+}
+
+.works-inner {
+    width: 400vw;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.2s ease 0s;
+}
