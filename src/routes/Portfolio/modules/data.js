@@ -1,7 +1,8 @@
-const baseDir = 'static/img/portfolio/'
+const baseDir = 'img/portfolio/'
 
 const initialData = {
   headerInteractedWith: false,
+  documentHeight: 0,
   focused: {},
   works: [
     { id: 1,

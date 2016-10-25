@@ -1,19 +1,17 @@
 .focused-work-pagination {
   position: absolute;
-  top: 73vh;
+  bottom: 0;
   width: 100vw;
+  height: 6%;
   text-align: center;
-  padding: 0;
+  padding: 0.3rem 0 0 0;
 
   @media only screen and (min-device-width: 320px) and (orientation: landscape) {
-    top: 69vh;
   }
 
   @media only screen and (min-device-width: 768px) {
-    top: 80.9vh;
   }
 
   @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-    top: 78vh;
   }
 }

@@ -65,7 +65,7 @@ class FocusedWorkList extends React.Component {
 
     if (focusedWork) {
       return (
-        <div>
+        <div className='focused-works-container'>
           <div ref='scrollContainer' className={className}>
             <Swipeable
               style={style}

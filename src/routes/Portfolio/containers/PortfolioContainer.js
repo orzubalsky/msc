@@ -4,7 +4,8 @@ import {
   previousItem,
   focusParent,
   focusItem,
-  unfocus
+  unfocus,
+  resize
  } from '../modules/portfolio'
 import {
   allParents,
@@ -29,7 +30,8 @@ const mapDispatchToProps = {
   previousItem : item => previousItem(item),
   focusParent  : item => focusParent(item),
   focusItem    : item => focusItem(item),
-  unfocus      : () => unfocus()
+  unfocus      : () => unfocus(),
+  resize       : width => resize(width)
 }
 
 const mapStateToProps = (state) => ({
@@ -38,7 +40,8 @@ const mapStateToProps = (state) => ({
   focused              : state.portfolio.focused,
   focusedIndex         : findIndex(state.portfolio, state.portfolio.focused),
   focusedParentIndex   : findParentIndex(state.portfolio, state.portfolio.focused),
-  headerInteractedWith : state.portfolio.headerInteractedWith
+  headerInteractedWith : state.portfolio.headerInteractedWith,
+  documentHeight       : state.portfolio.documentHeight
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

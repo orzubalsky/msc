@@ -2,19 +2,14 @@
   display: inline-block;
   position: relative;
   width: 12rem;
-  height : 12rem;
+  height : 100%;
   margin:0;
   opacity: 0.4;
-  bottom: -0.6rem;
 
   @media only screen and (min-device-width: 320px) and (orientation: landscape) {
-    width: 8rem;
-    height : 8rem;
   }
 
   @media only screen and (min-device-width: 768px) {
-    width: 16rem;
-    height : 16rem;
   }
 
   &.work--active,

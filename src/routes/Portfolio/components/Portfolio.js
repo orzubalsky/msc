@@ -23,7 +23,9 @@ export const Portfolio = (props) => (
     <WorkList
       works={props.parents}
       focusedIndex={props.focusedParentIndex}
+      documentHeight={props.documentHeight}
       onWorkClick={props.focusParent}
+      onResize={props.resize}
     />
   </div>
 )
@@ -34,12 +36,14 @@ Portfolio.propTypes = {
   focused              : React.PropTypes.object.isRequired,
   focusedIndex         : React.PropTypes.number.isRequired,
   focusedParentIndex   : React.PropTypes.number.isRequired,
+  documentHeight       : React.PropTypes.number.isRequired,
   headerInteractedWith : React.PropTypes.bool.isRequired,
   unfocus              : React.PropTypes.func.isRequired,
   nextItem             : React.PropTypes.func.isRequired,
   previousItem         : React.PropTypes.func.isRequired,
   focusItem            : React.PropTypes.func.isRequired,
-  focusParent          : React.PropTypes.func.isRequired
+  focusParent          : React.PropTypes.func.isRequired,
+  resize               : React.PropTypes.func.isRequired
 }
 
 export default Portfolio

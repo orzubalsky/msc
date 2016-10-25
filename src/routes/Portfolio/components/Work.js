@@ -7,7 +7,11 @@ class Work extends React.Component {
     let className = this.props.isActive ? 'work work--active' : 'work'
 
     return (
-      <div className={className} onClick={this.props.onClick}>
+      <div
+        className={className}
+        onClick={this.props.onClick}
+        style={{ width: this.props.width }}
+      >
         <div className='work-content'>
           <span className='work-text'>{this.props.text}</span>
           <img className='work-image' src={this.props.thumbnail} />
@@ -25,7 +29,8 @@ Work.propTypes = {
   url: PropTypes.string.isRequired,
   thumbnail: PropTypes.string,
   text: PropTypes.string,
-  isActive: PropTypes.bool.isRequired
+  isActive: PropTypes.bool.isRequired,
+  width: PropTypes.number
 }
 
 export default Work

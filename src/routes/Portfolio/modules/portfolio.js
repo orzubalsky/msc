@@ -13,6 +13,7 @@ export const PREVIOUS_ITEM = 'PREVIOUS_ITEM'
 export const FOCUS_PARENT = 'FOCUS_PARENT'
 export const FOCUS_ITEM = 'FOCUS_ITEM'
 export const UNFOCUS = 'UNFOCUS'
+export const RESIZE = 'RESIZE'
 
 // ------------------------------------
 // Actions
@@ -52,6 +53,13 @@ export function unfocus () {
   }
 }
 
+export function resize (height) {
+  return {
+    type: RESIZE,
+    height: height
+  }
+}
+
 /*  This is a thunk, meaning it is a function that immediately
     returns a function for lazy evaluation. It is incredibly useful for
     creating async actions, especially when combined with redux-thunk!
@@ -77,6 +85,7 @@ export const actions = {
   focusParent,
   focusItem,
   unfocus,
+  resize,
   doubleAsync
 }
 
@@ -90,7 +99,8 @@ const ACTION_HANDLERS = {
     focused: collectionFirst(state, action.work), headerInteractedWith: true
   }),
   [FOCUS_ITEM] : (state, action) => Object.assign({}, state, { focused: action.work }),
-  [UNFOCUS] : (state, action) => Object.assign({}, state, { focused: {} })
+  [UNFOCUS] : (state, action) => Object.assign({}, state, { focused: {} }),
+  [RESIZE] : (state, action) => Object.assign({}, state, { documentHeight: action.height })
 }
 
 // ------------------------------------

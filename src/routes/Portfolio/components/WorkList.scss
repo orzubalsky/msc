@@ -1,28 +1,33 @@
 .works-outer {
+  display: table-row;
+  height: 15%;
   position: absolute;
   bottom: 0;
   left: 0;
   overflow-x: scroll;
   overflow-y: hidden;
-  height: 23vh;
   width: 100vw;
-  z-index: 1;
+  z-index: 2;
 
   @media only screen and (min-device-width: 320px) and (orientation: landscape) {
-    height: 25vh;
   }
 
   @media only screen and (min-device-width: 768px) {
-    height: 15vh;
   }
 
   @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-    height: 20vh;
   }
+}
+
+.works-thumbnails {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .works-inner {
     width: 400vw;
+    height: 100%;
     position: absolute;
     bottom: 0;
     transition: all 0.2s ease 0s;

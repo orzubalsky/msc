@@ -1,28 +1,22 @@
 .header {
-  margin: 0;
-  height: 78vh;
+  display: table-row;
+  height: 5vh;
+  width: 100vw;
+  z-index: 3;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 5;
-  background-color: white;
-  width: 100vw;
 
   @media only screen and (min-device-width: 320px) and (orientation: landscape) {
-    height: 67vh;
   }
 
   @media only screen and (min-device-width: 768px) {
-    height: 85vh;
   }
 
   @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-    height: 80vh;
   }
 
   &.header--focused {
-    height: 8vh;
-
     .header-name {
       top: 1vh;
       font-size: 1.6rem;
