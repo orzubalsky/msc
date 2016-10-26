@@ -30,7 +30,7 @@ class Header extends React.Component {
         </h1>
         <MediaQuery query='(min-device-width: 960px)'>
           <div className='contact-top'>
-            <Contact />
+            <Contact onClick={this.props.onClick} />
           </div>
         </MediaQuery>
         {about}
