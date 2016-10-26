@@ -2,6 +2,7 @@ const baseDir = 'img/portfolio/'
 
 const initialData = {
   headerInteractedWith: false,
+  workHovered: false,
   documentHeight: 0,
   focused: {},
   works: [

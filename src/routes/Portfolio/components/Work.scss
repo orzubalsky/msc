@@ -19,6 +19,12 @@
   }
 }
 
+.works-outer--initial {
+  .work {
+    opacity: 1
+  }
+}
+
 .work-content {
     position:absolute;
     height:100%;
@@ -31,14 +37,12 @@
   text-align: center;
   left: 1.4rem;
   top: 0.7rem;
-
-  @media only screen and (min-device-width: 320px) and (orientation: landscape) {
-    display: none;
-  }
+  padding: 0 0.2rem 0.2rem;
+  background: rgba(255,255,255,0.7);
 
   @media only screen and (min-device-width: 768px) {
     font-size: 1.4rem;
-    left: 2.4rem;
+    left: 1rem;
   }
 }
 

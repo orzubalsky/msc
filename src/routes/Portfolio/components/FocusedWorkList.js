@@ -94,6 +94,7 @@ class FocusedWorkList extends React.Component {
 }
 
 FocusedWorkList.propTypes = {
+  browser: React.PropTypes.object.isRequired,
   collection: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     parent: PropTypes.number,

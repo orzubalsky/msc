@@ -49,6 +49,7 @@ export function collectionForFocused (state) {
 }
 
 export function collectionFirst (state, work) {
+  work = work || _.first(_.sortBy(state.works, 'order'))
   let collection = collectionForWork(state.works, work)
 
   return _.chain(collection)

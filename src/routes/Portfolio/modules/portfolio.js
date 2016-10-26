@@ -12,8 +12,10 @@ export const NEXT_ITEM = 'NEXT_ITEM'
 export const PREVIOUS_ITEM = 'PREVIOUS_ITEM'
 export const FOCUS_PARENT = 'FOCUS_PARENT'
 export const FOCUS_ITEM = 'FOCUS_ITEM'
+export const FOCUS_FIRST = 'FOCUS_FIRST'
 export const UNFOCUS = 'UNFOCUS'
 export const RESIZE = 'RESIZE'
+export const SET_WORK_HOVERED = 'SET_WORK_HOVERED'
 
 // ------------------------------------
 // Actions
@@ -47,16 +49,22 @@ export function focusItem (work) {
   }
 }
 
+export function focusFirst () {
+  return {
+    type: FOCUS_FIRST
+  }
+}
+
 export function unfocus () {
   return {
     type: UNFOCUS
   }
 }
 
-export function resize (height) {
+export function setWorkHovered (wasHovered) {
   return {
-    type: RESIZE,
-    height: height
+    type: SET_WORK_HOVERED,
+    hovered: wasHovered
   }
 }
 
@@ -84,8 +92,9 @@ export const actions = {
   previousItem,
   focusParent,
   focusItem,
+  focusFirst,
   unfocus,
-  resize,
+  setWorkHovered,
   doubleAsync
 }
 
@@ -99,8 +108,11 @@ const ACTION_HANDLERS = {
     focused: collectionFirst(state, action.work), headerInteractedWith: true
   }),
   [FOCUS_ITEM] : (state, action) => Object.assign({}, state, { focused: action.work }),
-  [UNFOCUS] : (state, action) => Object.assign({}, state, { focused: {} }),
-  [RESIZE] : (state, action) => Object.assign({}, state, { documentHeight: action.height })
+  [FOCUS_FIRST] : (state, action) => Object.assign({}, state, {
+    focused: collectionFirst(state), headerInteractedWith: true
+  }),
+  [UNFOCUS] : (state, action) => Object.assign({}, state, { focused: {}, workHovered: false }),
+  [SET_WORK_HOVERED] : (state, action) => Object.assign({}, state, { workHovered: action.hovered })
 }
 
 // ------------------------------------

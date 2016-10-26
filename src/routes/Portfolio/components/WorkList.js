@@ -6,26 +6,23 @@ import './WorkList.scss'
 
 class WorkList extends React.Component {
 
+  componentWillMount () {
+    this.multiplier = this.props.browser.orientation === 'landscape' && this.props.browser.width < 768 ? 0.20 : 0.15
+  }
+
   componentDidMount () {
     window.addEventListener('orientationchange', this.setScrollPosition.bind(this))
-    window.addEventListener('onresize', this.setDocumentHeight.bind(this))
-    this.setDocumentHeight()
   }
 
   componentDidUpdate () {
     this.setScrollPosition()
   }
 
-  setDocumentHeight () {
-    let documentHeight = window.innerHeight || document.clientHeight || document.documentElement.clientHeight
-    this.props.onResize(documentHeight)
-  }
-
   setScrollPosition () {
     const containerNode = ReactDOM.findDOMNode(this.refs.scrollContainer)
     const workNode = containerNode.children[0].children[0].children[this.props.focusedIndex]
 
-    return Velocity(workNode, 'scroll', {
+    return workNode && Velocity(workNode, 'scroll', {
       container: containerNode,
       duration: 100,
       axis: 'x',
@@ -44,9 +41,10 @@ class WorkList extends React.Component {
           <Work
             key={work.id}
             isActive={this.isActive(index)}
-            width={this.props.documentHeight * 0.15}
+            width={this.props.browser.height * this.multiplier}
             {...work}
             onClick={() => this.props.onWorkClick(work)}
+            onMouseEnter={() => this.props.onWorkMouseEnter()}
           />
         )}
       </div>
@@ -55,12 +53,12 @@ class WorkList extends React.Component {
 
   render () {
     let works = this.props.works
-    let className = 'works-inner'
-    let style = { width: (works.length * this.props.documentHeight * 0.15) + 'px' }
+    let className = this.props.workHovered ? 'works-outer' : 'works-outer works-outer--initial'
+    let style = { width: (works.length * this.props.browser.height * this.multiplier) + 'px' }
 
     return (
-      <div ref='scrollContainer' className='works-outer'>
-        <div className={className} style={style}>
+      <div ref='scrollContainer' className={className}>
+        <div className='works-inner' style={style}>
           {this.buildWorks(works)}
         </div>
       </div>
@@ -69,6 +67,7 @@ class WorkList extends React.Component {
 }
 
 WorkList.propTypes = {
+  browser: React.PropTypes.object.isRequired,
   works: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     parent: PropTypes.number,
@@ -78,9 +77,9 @@ WorkList.propTypes = {
     text: PropTypes.string
   }).isRequired).isRequired,
   focusedIndex: PropTypes.number,
-  documentHeight: PropTypes.number.isRequired,
+  workHovered: PropTypes.bool.isRequired,
   onWorkClick: PropTypes.func.isRequired,
-  onResize: PropTypes.func.isRequired
+  onWorkMouseEnter: PropTypes.func.isRequired
 }
 
 export default WorkList

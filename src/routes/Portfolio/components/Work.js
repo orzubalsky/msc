@@ -10,6 +10,7 @@ class Work extends React.Component {
       <div
         className={className}
         onClick={this.props.onClick}
+        onMouseEnter={this.props.onMouseEnter}
         style={{ width: this.props.width }}
       >
         <div className='work-content'>
@@ -23,6 +24,7 @@ class Work extends React.Component {
 
 Work.propTypes = {
   onClick: PropTypes.func.isRequired,
+  onMouseEnter: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
   parent: PropTypes.number,
   order: PropTypes.number.isRequired,

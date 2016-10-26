@@ -4,8 +4,9 @@ import {
   previousItem,
   focusParent,
   focusItem,
+  focusFirst,
   unfocus,
-  resize
+  setWorkHovered
  } from '../modules/portfolio'
 import {
   allParents,
@@ -26,22 +27,24 @@ import Portfolio from '../components/Portfolio'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  nextItem     : item => nextItem(item),
-  previousItem : item => previousItem(item),
-  focusParent  : item => focusParent(item),
-  focusItem    : item => focusItem(item),
-  unfocus      : () => unfocus(),
-  resize       : width => resize(width)
+  nextItem       : item => nextItem(item),
+  previousItem   : item => previousItem(item),
+  focusParent    : item => focusParent(item),
+  focusItem      : item => focusItem(item),
+  focusFirst     : () => focusFirst(),
+  unfocus        : () => unfocus(),
+  setWorkHovered : () => setWorkHovered(true)
 }
 
 const mapStateToProps = (state) => ({
+  browser              : state.browser,
   collectionForFocused : collectionForFocused(state.portfolio),
   parents              : allParents(state.portfolio.works),
   focused              : state.portfolio.focused,
   focusedIndex         : findIndex(state.portfolio, state.portfolio.focused),
   focusedParentIndex   : findParentIndex(state.portfolio, state.portfolio.focused),
   headerInteractedWith : state.portfolio.headerInteractedWith,
-  documentHeight       : state.portfolio.documentHeight
+  workHovered          : state.portfolio.workHovered
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

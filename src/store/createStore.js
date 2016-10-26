@@ -1,4 +1,5 @@
 import { applyMiddleware, compose, createStore } from 'redux'
+import { responsiveStoreEnhancer } from 'redux-responsive'
 import thunk from 'redux-thunk'
 import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
@@ -28,6 +29,7 @@ export default (initialState = {}) => {
     makeRootReducer(),
     initialState,
     compose(
+      responsiveStoreEnhancer,
       applyMiddleware(...middleware),
       ...enhancers
     )

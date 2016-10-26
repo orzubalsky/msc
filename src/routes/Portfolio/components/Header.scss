@@ -7,7 +7,8 @@
   top: 0;
   left: 0;
 
-  @media only screen and (min-device-width: 320px) and (orientation: landscape) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (orientation: landscape) {
+    height: 9vh;
   }
 
   @media only screen and (min-device-width: 768px) {
@@ -23,7 +24,7 @@
 
       @media screen and (min-device-width: 1024px) {
         position: absolute;
-        left: 2rem;
+        left: 1.4rem;
       }
 
       @media only screen and (min-device-width: 320px) and (orientation: landscape) {
@@ -31,7 +32,7 @@
       }
 
       @media only screen and (min-device-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.4rem;
       }
     }
 
@@ -49,6 +50,26 @@
   }
 
   &.header--interacted {
+    height: 85%;
+    padding: 6rem 3rem;
+
+    @media only screen and (min-width: 768px) {
+      padding: 6rem 14rem;
+    }
+
+    @media only screen and (min-width: 960px) {
+      padding: 6rem 20rem;
+    }
+
+    .header-name {
+      top: 0;
+      margin: 0 0 6rem 0;
+
+      @media only screen and (min-device-width: 960px) {
+        margin: 0 0 9rem 0;
+      }
+    }
+
     .contact {
       opacity: 1;
       -webkit-transition-delay: 0.4s;
@@ -59,12 +80,12 @@
 
 .header-name {
   cursor: pointer;
-  margin: 0;
+  margin: 0 0 3rem 0;
   padding: 0;
+  top: 38vh;
   font-size: 2rem;
   text-align: center;
   position: relative;
-  top: 36vh;
   transition: all 0.1s ease 0s;
 
   @media only screen and (min-device-width: 768px) {
@@ -104,7 +125,7 @@
   }
 
   @media only screen and (min-device-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   @media only screen and (min-device-width: 768px) and (orientation: landscape) {
@@ -114,19 +135,31 @@
 
 .contact-top {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 1rem;
+  top: 0.4rem;
   opacity: 0;
 
   .contact {
     display: block;
     opacity: 1;
-    top: 0.8rem;
-    right: 2rem;
+    top: 0;
+    right: 0;
   }
 }
 
 .contact-email {
   text-decoration: none;
   color: black;
+}
+
+.about {
+
+}
+
+.about-paragraph {
+  margin: 0 0 3rem 0;
+
+  &.about-paragraph--email {
+    text-align: center;
+  }
 }

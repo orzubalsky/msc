@@ -9,7 +9,8 @@
   width: 100vw;
   z-index: 2;
 
-  @media only screen and (min-device-width: 320px) and (orientation: landscape) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (orientation: landscape) {
+    height: 20%
   }
 
   @media only screen and (min-device-width: 768px) {

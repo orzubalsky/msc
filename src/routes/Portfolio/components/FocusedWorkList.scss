@@ -3,10 +3,15 @@
   position: absolute;
   width: 100%;
   padding-top: 5vh;
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (orientation: landscape) {
+    padding-top: 9vh;
+    height: 80%;
+  }
 }
 
 .focused-works-outer {
-  height: 94%;
+  height: 91%;
   display: table-row;
   position: absolute;
   padding-top: 5vh;
@@ -26,7 +31,9 @@
     display: none;
   }
 
-  @media only screen and (min-device-width: 320px) and (orientation: landscape) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (orientation: landscape) {
+    padding-top: 9vh;
+    height: 80%;
   }
 
   @media only screen and (min-device-width: 768px) {
@@ -52,7 +59,8 @@
   transition: all .2s ease 0s;
   padding-top: 5vh;
 
-  @media only screen and (min-device-width: 320px) and (orientation: landscape) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (orientation: landscape) {
+    padding-top: 9vh;
   }
 
   @media only screen and (min-device-width: 768px) {

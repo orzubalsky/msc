@@ -18,11 +18,16 @@ body {
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 200;
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
   letter-spacing: 0.09rem;
+  background: #efefef;
+
+  @media only screen and (min-device-width: 768px) {
+    font-size: 1.8rem;
+  }
 }
 
 ul {
@@ -36,14 +41,25 @@ li {
   margin: 0;
 }
 
+a {
+  color: black
+}
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
+#root {
+  background-color: white;
+  width: 100%;
+  max-width: $containerWidth;
+  margin: 0 auto;
+}
+
 .portfolio {
 	height: 100%;
-	width: 100vw;
+	width: 100%;
 	display: table;
 }
