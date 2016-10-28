@@ -71,7 +71,9 @@ class FocusedWorkList extends React.Component {
               style={style}
               className='focused-works-inner'
               onSwipedLeft={() => { this.props.onWorkLeftSwipe(focusedWork) }}
+              onSwipedDown={() => { this.props.onWorkLeftSwipe(focusedWork) }}
               onSwipedRight={() => { this.props.onWorkRightSwipe(focusedWork) }}
+              onSwipedUp={() => { this.props.onWorkRightSwipe(focusedWork) }}
               delta={0}
             >
               {collection.map(work =>
