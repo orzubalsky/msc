@@ -3,12 +3,12 @@ import React from 'react'
 const About = () => (
   <div className='about'>
     <p className='about-paragraph'>
-      Magdalene Carson is the sweetest mouse ever born in all of city of New York City.
-      She plays the banjo witn <a href='http://spiritfamilyreunion.com'>Spirit Family Reunion</a>,
-      and does amazing things all the time.
+      Magdalene Carson is an illustrator and musician from New York City.
+      She plays banjo with <a target='_blank' href='http://spiritfamilyreunion.com'>Spirit Family Reunion</a>,
+      with whom she has spent many years touring, driving around the country in old vans.
     </p>
     <p className='about-paragraph'>
-      Get in touch at <a href='mailto:magdalenecarson@gmail.com'>magdalenecarson@gmail.com</a>.
+      Get in touch at <span className='email'>magdalenecarson@gmail.com</span>.
     </p>
   </div>
 )

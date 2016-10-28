@@ -2,13 +2,12 @@ import React, { PropTypes } from 'react'
 
 const Contact = ({ onClick }) => (
   <div className='contact'>
-    <a
+    <span
       className='contact-email'
-      href='mailto:magdalenecarson@gmail.com'
       onClick={() => onClick()}
     >
       magdalenecarson@gmail.com
-    </a>
+    </span>
   </div>
 )
 
