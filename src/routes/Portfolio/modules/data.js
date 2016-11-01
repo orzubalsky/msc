@@ -6,6 +6,26 @@ const initialData = {
   documentHeight: 0,
   focused: {},
   works: [
+    { id: 32,
+      order: 11,
+      url: `${baseDir}akavishu/01.jpg`,
+      thumbnail: `${baseDir}akavishu/01_square.jpg`
+    },
+    { id: 33,
+      order: 12,
+      url: `${baseDir}akavishu/02.jpg`,
+      parent: 32
+    },
+    { id: 34,
+      order: 13,
+      url: `${baseDir}akavishu/03.jpg`,
+      parent: 32
+    },
+    { id: 35,
+      order: 14,
+      url: `${baseDir}akavishu/04.jpg`,
+      parent: 32
+    },
     { id: 1,
       order: 100,
       url: `${baseDir}summerfall.jpg`,
