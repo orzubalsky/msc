@@ -15,7 +15,10 @@ class WorkList extends React.Component {
   }
 
   componentDidUpdate () {
-    this.setScrollPosition()
+    if (this.focusedIndex !== this.props.focusedIndex) {
+      this.setScrollPosition()
+      this.focusedIndex = this.props.focusedIndex
+    }
   }
 
   setScrollPosition () {
