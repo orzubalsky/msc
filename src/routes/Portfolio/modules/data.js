@@ -1,5 +1,7 @@
 const baseDir = 'img/portfolio/'
 
+const akavishuDescription = 'Collaboration with <a href="http://inbalzubalsky.com" target="_blank">Inbal Zubalsky</a>'
+
 const initialData = {
   headerInteractedWith: false,
   workHovered: false,
@@ -34,22 +36,26 @@ const initialData = {
     { id: 32,
       order: 301,
       url: `${baseDir}akavishu/01.jpg`,
-      thumbnail: `${baseDir}akavishu/01_square.jpg`
+      thumbnail: `${baseDir}akavishu/01_square.jpg`,
+      description: akavishuDescription
     },
     { id: 33,
       order: 302,
       url: `${baseDir}akavishu/02.jpg`,
-      parent: 32
+      parent: 32,
+      description: akavishuDescription
     },
     { id: 34,
       order: 303,
       url: `${baseDir}akavishu/03.jpg`,
-      parent: 32
+      parent: 32,
+      description: akavishuDescription
     },
     { id: 35,
       order: 304,
       url: `${baseDir}akavishu/04.jpg`,
-      parent: 32
+      parent: 32,
+      description: akavishuDescription
     },
     { id: 1,
       order: 401,

@@ -1,13 +1,32 @@
 import React, { PropTypes } from 'react'
 import './FocusedWork.scss'
 
-const FocusedWork = ({ onClick, url }) => (
-  <div className='focused-work' onClick={onClick}>
-    <div className='focused-work-content'>
-      <img className='focused-work-image' src={url} />
-    </div>
-  </div>
-)
+class FocusedWork extends React.Component {
+
+  createDescription () {
+    if (this.props.description) {
+      return (
+        <div
+          className='focused-work-description'
+          dangerouslySetInnerHTML={{ __html: this.props.description }}
+        />
+      )
+    }
+
+    return null
+  }
+
+  render () {
+    return (
+      <div className='focused-work' onClick={this.props.onClick}>
+        <div className='focused-work-content'>
+          <img className='focused-work-image' src={this.props.url} />
+          {this.createDescription()}
+        </div>
+      </div>
+    )
+  }
+}
 
 FocusedWork.propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -16,6 +35,7 @@ FocusedWork.propTypes = {
   order: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired,
   thumbnail: PropTypes.string,
+  description: PropTypes.string,
   text: PropTypes.string
 }
 
